@@ -192,6 +192,10 @@ static CGFloat const JDFPeekabooCoordinatorNavigationBarHorizontalHeightDifferen
         [self.scrollViewRealDelegate scrollViewDidScroll:scrollView];
     }
     
+    if (!(self.scrollView.isDragging || self.scrollView.isDecelerating)) {
+        return;
+    }
+    
     if (self.containingView.bounds.size.height - self.topView.bounds.size.height >= scrollView.contentSize.height) {
         UIEdgeInsets contentInset = self.scrollView.contentInset;
         contentInset.bottom = self.bottomView.bounds.size.height;
