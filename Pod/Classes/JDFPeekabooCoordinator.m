@@ -192,7 +192,7 @@ static CGFloat const JDFPeekabooCoordinatorNavigationBarHorizontalHeightDifferen
         [self.scrollViewRealDelegate scrollViewDidScroll:scrollView];
     }
     
-    if (!(self.scrollView.isDragging || self.scrollView.isDecelerating)) {
+    if (!(self.scrollView.isDragging || self.scrollView.isDecelerating) && [self topViewPercentageHidden] == 0.0f) {
         return;
     }
     
